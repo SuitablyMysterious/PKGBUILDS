@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Volanta
+Comment=Volanta Client for Windows, macOS, Linux and Web.
+Exec=volanta %U
+Icon=volanta
+Terminal=false
+Type=Application
+Icon=volanta
+StartupWMClass=Volanta
+MimeType=x-scheme-handler/volanta;
+Categories=Game;

@@ -1,0 +1,29 @@
+# Maintainer: SuitablyMysterious <suitablymysterious@gmail.com>
+
+pkgname=volanta-bin
+_pkgname=volanta
+pkgver=1.19.2
+_build=edd889be
+pkgrel=1
+pkgdesc='Volanta Client for Windows, macOS, Linux and Web.'
+arch=('x86_64')
+url='https://volanta.app'
+license=('LicenseRef-custom')
+provides=("$_pkgname")
+conflicts=("$_pkgname")
+options=('!strip')
+noextract=("$_pkgname-$pkgver.AppImage")
+DLAGENTS=('https::/usr/bin/curl -fLC - --retry 3 --retry-delay 3 -A Mozilla/5.0 -o %o %u') # volanta blocks default curl
+source=("$_pkgname-$pkgver.AppImage::https://cdn.volanta.app/software/volanta-app/$pkgver-$_build/$_pkgname-$pkgver.AppImage"
+        "$_pkgname.desktop"
+        "$_pkgname.png")
+        
+sha256sums=('bb85fd5297cff982c72b3bf9d596d2b8a98510db636d25a997b95da5f5729837'
+            '10978c4a2a7d1c0276928cabb66384c4118fbbc72adbb3f0b26ee4ea578ec0a8'
+            '8e8fb0979bab1d0e180fa559934ab016c08faca2a63640ca2cddbc40285b38d1')
+
+package() {
+    install -Dm755 "$srcdir/$_pkgname-$pkgver.AppImage" "$pkgdir/usr/bin/$_pkgname"
+    install -Dm644 "$srcdir/$_pkgname.desktop" "$pkgdir/usr/share/applications/$_pkgname.desktop"
+	install -Dm644 "$srcdir/$_pkgname.png" "$pkgdir/usr/share/pixmaps/$_pkgname.png"
+}
