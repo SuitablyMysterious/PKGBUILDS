@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=AutoOrtho
+Comment=Orthophoto streaming for X-Plane 11/12
+Exec=env SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt autoortho %U
+Terminal=false
+Categories=Game;Utility;
