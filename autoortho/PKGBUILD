@@ -3,7 +3,7 @@
 pkgname=autoortho-bin
 _pkgname=autoortho
 pkgver=0.7.2
-pkgrel=1
+pkgrel=2
 arch=('x86_64')
 depends=('fuse2')
 url='https://github.com/kubilus1/autoortho/'
@@ -16,7 +16,7 @@ source=("$url/releases/download/$pkgver/autoortho_lin_$pkgver.bin"
 
 sha256sums=('a419c08b8e8ee67a3601963844d67ef2330264e843454ba04d6eaad1c3b22e9b'
             '184cc6d39a4a0eb52a84dda04598766d3124d2a84b18b2c81486914e6be40cd8'
-            '45cffcce7a4544fedd55ed8952ae506419183dfc8c3514f4f48560a4e9cc6136')
+            'd258cd529fdeea56b169d0f151a783d9081393e2d7c3e495a8c2c1527b8c1a49')
 
 package() {
     install -Dm755 "$srcdir/${_pkgname}_lin_${pkgver}.bin" "$pkgdir/usr/bin/$_pkgname"
